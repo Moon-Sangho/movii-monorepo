@@ -1,9 +1,12 @@
 import crypto from 'node:crypto';
 
-const allowedImageHosts = ['https://image.tmdb.org/t/p/original'];
+const ALLOWED_IMAGE_HOSTS = ['https://image.tmdb.org/t/p/original'];
 
 // 커스텀 도메인을 쓰는 경우 추가 가능
-const allowedOrigins = ['https://d3s8fkj1w5lpg3.cloudfront.net'];
+const ALLOWED_ORIGINS = ['https://d3s8fkj1w5lpg3.cloudfront.net'];
+
+// sign, resize Lambda와 연동된 CloudFront 도메인
+const CLOUDFRONT_IMG_DOMAIN = 'https://d3fnrhx7bmlqkd.cloudfront.net';
 
 // HMAC 서명용
 const HMAC_SALT = '68075fcc527acb99d284d0bdfe7dc141e4dc80fd708179cbd96471ea6d5c2a89';
@@ -34,7 +37,7 @@ export const handler = async (event) => {
 
   // 1) 요청 Origin 검증
   // 다른 사이트에서 무작위로 sign API를 악용하지 못하게 하기 위함
-  if (!allowedOrigins.includes(origin)) {
+  if (!ALLOWED_ORIGINS.includes(origin)) {
     return {
       statusCode: 403,
       body: 'Forbidden origin',
@@ -49,7 +52,7 @@ export const handler = async (event) => {
 
   // 외부 이미지를 무작위로 다운로드하면 Lambda가 DDOS를 당할 수 있어서 이미지 출처를 화이트리스트로 제한
   const parsed = new URL(imageUrl);
-  if (!allowedImageHosts.includes(parsed.host)) {
+  if (!ALLOWED_IMAGE_HOSTS.includes(parsed.host)) {
     return { statusCode: 403, body: 'Image host not allowed' };
   }
 
@@ -68,7 +71,7 @@ export const handler = async (event) => {
   const payload = `w=${width}&q=${quality}&f=${format}&u=${encodedUrl}`;
   const sig = hmacSign(payload);
 
-  const signedUrl = `/img/${payload}&sig=${sig}`;
+  const signedUrl = `${CLOUDFRONT_IMG_DOMAIN}/img/${payload}&sig=${sig}`;
 
   return {
     statusCode: 200,

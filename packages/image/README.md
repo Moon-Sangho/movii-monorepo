@@ -118,7 +118,7 @@ fetch('/img-sign', {
 
 ```json
 {
-  "signedUrl": "/img/w=750&q=80&f=webp&url=...&sig=abcdef123456"
+  "signedUrl": "https://xxxx.cloudfront.net/img/w=750&q=80&f=webp&url=...&sig=abcdef123456"
 }
 ```
 
