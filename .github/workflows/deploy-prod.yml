@@ -18,6 +18,13 @@ on:
       # 현재 스크립트 자체 변경 시
       - '.github/workflows/deploy-prod.yml'
 
+  # 수동 배포 트리거
+  workflow_dispatch:
+    inputs:
+      reason:
+        description: 'Manual deploy reason (optional)'
+        required: false
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
