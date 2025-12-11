@@ -14,7 +14,7 @@
 - 🎯 **TypeScript 지원** - 완전한 타입 안정성
 - 📦 **제로 디펜던시** - 경량 및 빠른 성능
 - ♿ **접근성** - ARIA 레이블 및 키보드 내비게이션 지원
-- 🎨 **Tailwind CSS 최적화** - Tailwind CSS 유틸리티로 구축
+- 🎨 **Tailwind CSS 최적화** - Tailwind CSS의 유틸리티 클래스로 스타일 오버라이드 가능
 
 ## 설치
 

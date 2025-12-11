@@ -14,7 +14,7 @@ A customizable, lightweight React carousel component with support for single and
 - 🎯 **TypeScript support** - Full type safety
 - 📦 **Zero dependencies** - Lightweight and fast
 - ♿ **Accessible** - ARIA labels and keyboard navigation support
-- 🎨 **Tailwind CSS optimized** - Built with Tailwind CSS utilities
+- 🎨 **Tailwind CSS optimized** - You can override styles with tailwindcss's utility classes.
 
 ## Installation
 
