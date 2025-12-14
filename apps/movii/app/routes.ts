@@ -5,8 +5,8 @@ export default [
     index('routes/home.tsx'),
 
     ...prefix('contents', [
-      route(':id', 'routes/movie-detail/index.tsx'),
-      route(':id/credits', 'routes/movie-detail/credits.tsx'),
+      route(':id', 'routes/contents-detail/index.tsx'),
+      route(':id/credits', 'routes/contents-detail/credits.tsx'),
     ]),
 
     ...prefix('people', [route(':id', 'routes/people.tsx')]),

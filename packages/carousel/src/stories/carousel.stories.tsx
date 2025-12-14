@@ -229,10 +229,10 @@ export const CustomButtons: Story = {
             </div>
           ))}
         </Carousel.Content>
-        <Carousel.PrevButton className="-left-14 bg-white/80 hover:bg-white rounded-full size-12 shadow-lg">
+        <Carousel.PrevButton className="-left-14! bg-white/80 hover:bg-white rounded-full size-12 shadow-lg">
           <span className="text-2xl text-gray-800">{'<'}</span>
         </Carousel.PrevButton>
-        <Carousel.NextButton className="-right-14 bg-white/80 hover:bg-white rounded-full size-12 shadow-lg">
+        <Carousel.NextButton className="-right-14! bg-white/80 hover:bg-white rounded-full size-12 shadow-lg">
           <span className="text-2xl text-gray-800">{'>'}</span>
         </Carousel.NextButton>
         {args.slidesPerView === 1 && (

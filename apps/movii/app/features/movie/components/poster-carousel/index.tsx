@@ -41,8 +41,8 @@ const PosterCarousel = ({ type, carouselTitle }: PosterCarouselProps) => {
           ))}
         </Carousel.Content>
         <div className="group-hover:visible invisible">
-          <Carousel.PrevButton className="-left-10 h-full" />
-          <Carousel.NextButton className="-right-10 h-full" />
+          <Carousel.PrevButton className="-left-10! h-full" />
+          <Carousel.NextButton className="-right-10! h-full" />
         </div>
       </Carousel.Root>
     </div>
