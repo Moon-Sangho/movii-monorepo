@@ -143,7 +143,7 @@ const PopularSearchKeywords = ({ mediaType }: { mediaType: TrendingMediaType }) 
       <div>
         <ul className="grid grid-rows-5 grid-flow-col gap-4 max-w-[720px] mt-5 auto-cols-fr shrink-0">
           {results.map((result, idx) => (
-            <li key={result?.id}>
+            <li key={result?.id} className="truncate">
               <Link
                 to={(() => {
                   if (!result?.mediaType) {
