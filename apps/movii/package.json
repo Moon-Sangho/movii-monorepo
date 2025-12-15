@@ -7,9 +7,9 @@
   "prettier": "@movii/prettier-config",
   "scripts": {
     "analyze": "cross-env ANALYZE=true vite build --config vite.prod.mjs",
-    "dev": "cross-env NODE_ENV=development node server.js",
+    "dev": "cross-env NODE_ENV=development node ./server/index.js",
     "build": "react-router build --config vite.prod.mjs",
-    "start": "cross-env NODE_ENV=production node server.js",
+    "start": "cross-env NODE_ENV=production node ./server/index.js",
     "typecheck": "tsc --noEmit",
     "lint": "eslint 'app/**/*.{js,jsx,ts,tsx}' '*.mjs'",
     "lint:fix": "eslint 'app/**/*.{js,jsx,ts,tsx}' '*.mjs' --fix",

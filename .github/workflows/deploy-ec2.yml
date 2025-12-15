@@ -50,13 +50,11 @@ jobs:
           pnpm build
 
           echo "➡️ Restart (PM2)"
-          if pm2 describe movii >/dev/null 2>&1; then
-            pm2 restart movii
-          else
-            cd apps/movii
-            PORT=3000 NODE_ENV=production pm2 start server.js --name movii
-          fi
+           cd apps/movii
+          pm2 delete movii >/dev/null 2>&1 || true
+          PORT=3000 NODE_ENV=production pm2 start ./server/index.js --name movii --update-env
           pm2 save
+          pm2 describe movii || true
 
       - name: Health check (wait & retry)
         run: |

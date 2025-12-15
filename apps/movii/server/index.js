@@ -3,7 +3,7 @@ import express from 'express';
 import morgan from 'morgan';
 
 // Short-circuit the type-checking of the built output.
-const BUILD_PATH = './dist/server/index.js';
+const BUILD_PATH = '../dist/server/index.js';
 const DEVELOPMENT = process.env.NODE_ENV === 'development';
 const PORT = Number.parseInt(process.env.PORT || '3000');
 
@@ -16,7 +16,7 @@ if (DEVELOPMENT) {
   console.log('Starting development server');
   const viteDevServer = await import('vite').then((vite) =>
     vite.createServer({
-      configFile: './vite.dev.mjs',
+      configFile: '../vite.dev.mjs',
       server: { middlewareMode: true },
     }),
   );
