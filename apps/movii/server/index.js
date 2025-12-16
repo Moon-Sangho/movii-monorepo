@@ -1,6 +1,8 @@
 import compression from 'compression';
 import express from 'express';
 import morgan from 'morgan';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 
 // Short-circuit the type-checking of the built output.
 const BUILD_PATH = '../dist/server/index.js';
@@ -14,16 +16,24 @@ app.disable('x-powered-by');
 
 if (DEVELOPMENT) {
   console.log('Starting development server');
+
+  const __filename = fileURLToPath(import.meta.url);
+  const __dirname = path.dirname(__filename);
+  const APP_ROOT = path.resolve(__dirname, '..');
+  const VITE_CONFIG_FILE = path.resolve(APP_ROOT, 'vite.dev.mjs');
+  const SSR_ENTRY = path.resolve(APP_ROOT, 'server/app.ts');
+
   const viteDevServer = await import('vite').then((vite) =>
     vite.createServer({
-      configFile: '../vite.dev.mjs',
+      root: APP_ROOT,
+      configFile: VITE_CONFIG_FILE,
       server: { middlewareMode: true },
     }),
   );
   app.use(viteDevServer.middlewares);
   app.use(async (req, res, next) => {
     try {
-      const source = await viteDevServer.ssrLoadModule('./server/app.ts');
+      const source = await viteDevServer.ssrLoadModule(SSR_ENTRY);
       return await source.app(req, res, next);
     } catch (error) {
       if (typeof error === 'object' && error instanceof Error) {
