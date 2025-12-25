@@ -2,19 +2,15 @@
 
 이 프로젝트는 영화 추천 사이트 Movii 서비스의 모노레포입니다.
 
-> ⚠️ 이 프로젝트는 아직 진행 중이며, 문서와 구조는 추후 업데이트될 수 있습니다. <br />
-> CI/CD, 캐싱, 빌드 자동화, 최적화 등은 점진적으로 개선될 예정입니다.
-
 ## 소개
 
-- 여러 앱과 패키지를 하나의 레포에서 관리합니다.
-- 현재 개발 진행 중이며, 주요 구조와 워크플로우는 지속적으로 업데이트될 예정입니다.
+- 영화 추천 사이트 Movii와 기타 재사용 가능한 패키지들을 하나의 레포에서 관리합니다.
 
 ## 폴더 구조
 
 ```
 apps/
-  movii/         : 왓챠 클론코딩 프로젝트 (간소화 버전)
+  movii/         : 영화 추천 및 정보 제공 서비스
 
 packages/
   browserslist-config: Browserslist 대상들을 모아둔 패키지
@@ -29,10 +25,10 @@ packages/
 
 ### apps/movii
 
-- 영화 추천 및 정보 제공 서비스
-- 왓챠 클론코딩 간소화 버전
+- 영화 추천 및 정보 제공 서비스 (왓챠 클론코딩 간소화 버전)
 - Next.js(pages router) 기반
 - 주요 기능: 영화 목록, 상세 정보, 검색, 인물 정보 제공
+- 현재 반응형 View는 지원하지 않습니다.
 
 ### packages/browserslist-config
 
@@ -44,6 +40,7 @@ packages/
 - 다양한 옵션을 지원하는 React 캐러셀 UI 컴포넌트
 - 독립적으로 재사용 가능하며, movii 등 여러 프로젝트에서 활용 가능
 - 주요 기능: 커스텀 스타일, 다양한 슬라이드 효과, 접근성 지원
+- ESM과 CJS 동시 지원
 - [NPM](https://www.npmjs.com/package/movii-carousel)에서 확인하실 수 있습니다.
 
 ### packages/eslint-config
@@ -64,7 +61,7 @@ packages/
 
 ### packages/typescript-config
 
-TypeScript 프로젝트의 공통 설정을 제공하는 패키지. 모노레포 내에서 사용가능
+- TypeScript 프로젝트의 공통 설정을 제공하는 패키지. 모노레포 내에서 사용가능
 
 ## 개발 및 배포
 
