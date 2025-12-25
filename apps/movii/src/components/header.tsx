@@ -1,10 +1,12 @@
 import DeleteIcon from '@movii/icons/delete';
-import { LogoIcon } from '@movii/icons/logo';
 import { SearchIcon } from '@movii/icons/search';
+import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { debounce } from 'radash';
 import { useRef } from 'react';
 import { useForm } from 'react-hook-form';
+
+import logo from '@/assets/images/logo.webp';
 
 type SearchFormData = {
   query: string;
@@ -111,7 +113,7 @@ const Header = () => {
   return (
     <div className="px-10 py-3 h-[72px] flex justify-between items-center bg-(--color-background)">
       <button onClick={() => router.push('/')}>
-        <LogoIcon className="w-[88px] h-[26px]" />
+        <Image src={logo} alt="Movii Logo" width={88} height={26} />
       </button>
       {router.pathname === '/search' ? <SearchBarInput /> : <SearchBarButton />}
     </div>
