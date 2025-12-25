@@ -12,7 +12,7 @@ const fetchMovies: MoviesFetcher = (type, params) =>
 
 export const moviesInfiniteQueryOptions = (type: MovieFetchType, params?: MoviesRequestParams) => {
   const page = params?.page ?? 1;
-  const language = params?.language ?? 'en-US';
+  const language = params?.language ?? 'ko';
 
   return infiniteQueryOptions({
     queryKey: movieQueryKeys.list(type, { page, language }),
