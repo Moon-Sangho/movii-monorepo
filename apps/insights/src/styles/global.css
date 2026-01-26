@@ -1,0 +1,47 @@
+@import 'tailwindcss';
+
+/* Reuse color variables from movii app */
+:root {
+  --color-black: #000;
+  --color-white: #fff;
+  --color-background10: #030708;
+  --color-background20: #141517;
+  --color-background30: #191a1c;
+  --color-gray60: #84868d;
+  --color-gray80: #bdbdbd;
+  --color-primary10: #f82f62;
+
+  --color-primary-text: var(--color-white);
+  --color-secondary-text: var(--color-gray80);
+  --color-background: var(--color-black);
+  --color-background-elevated: var(--color-background30);
+}
+
+body {
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    sans-serif;
+  background-color: var(--color-background);
+  color: var(--color-primary-text);
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+* {
+  box-sizing: border-box;
+}

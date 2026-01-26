@@ -1,0 +1,55 @@
+{
+  "name": "@movii/insights",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Movie analytics dashboard for Movii",
+  "type": "module",
+  "prettier": "@movii/prettier-config",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint 'src/**/*.{js,jsx,ts,tsx}' '*.mjs'",
+    "lint:fix": "eslint 'src/**/*.{js,jsx,ts,tsx}' '*.mjs' --fix",
+    "format": "prettier --write ."
+  },
+  "browserslist": [
+    "extends @movii/browserslist-config"
+  ],
+  "dependencies": {
+    "@movii/icons": "workspace:*",
+    "@tanstack/react-query": "^5.90.3",
+    "@tanstack/react-table": "^8.20.5",
+    "axios": "^1.12.2",
+    "clsx": "^2.1.1",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-error-boundary": "^6.0.0",
+    "react-router": "^7.6.0",
+    "recharts": "^2.15.0",
+    "radash": "^12.1.1",
+    "tailwind-merge": "^3.3.1"
+  },
+  "devDependencies": {
+    "@movii/browserslist-config": "workspace:*",
+    "@movii/eslint-config": "workspace:*",
+    "@movii/prettier-config": "workspace:*",
+    "@movii/typescript-config": "workspace:*",
+    "@tailwindcss/postcss": "^4.1.13",
+    "@tanstack/eslint-plugin-query": "^5.91.1",
+    "@tanstack/react-query-devtools": "^5.90.2",
+    "@types/node": "^24.10.1",
+    "@types/react": "catalog:",
+    "@types/react-dom": "catalog:",
+    "@vitejs/plugin-react": "^5.1.0",
+    "babel-plugin-react-compiler": "^1.0.0",
+    "eslint": "catalog:",
+    "postcss": "^8.5.6",
+    "postcss-preset-env": "^10.4.0",
+    "prettier": "catalog:",
+    "tailwindcss": "^4.1.13",
+    "typescript": "catalog:",
+    "vite": "^5.4.21"
+  }
+}

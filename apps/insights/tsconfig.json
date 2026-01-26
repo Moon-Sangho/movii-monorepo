@@ -1,0 +1,14 @@
+{
+  "extends": "@movii/typescript-config",
+  "compilerOptions": {
+    "composite": true,
+    "baseUrl": "src",
+    "paths": {
+      "@/*": ["./*"]
+    },
+    "types": ["vite/client"],
+    "lib": ["ES2017", "DOM"]
+  },
+  "include": ["src/**/*.ts", "src/**/*.tsx"],
+  "exclude": ["node_modules", "dist"]
+}

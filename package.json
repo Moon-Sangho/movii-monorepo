@@ -13,6 +13,7 @@
   "scripts": {
     "web": "pnpm --filter @movii/web",
     "carousel": "pnpm --filter movii-carousel",
+    "insights": "pnpm --filter @movii/insights",
     "build": "pnpm turbo run build",
     "typecheck": "pnpm turbo run typecheck",
     "lint": "pnpm turbo run lint",

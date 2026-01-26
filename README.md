@@ -11,6 +11,7 @@
 ```
 apps/
   movii/         : 영화 추천 및 정보 제공 서비스
+  insights/      : 영화별 Revenue 분석 대시보드
 
 packages/
   browserslist-config: Browserslist 대상들을 모아둔 패키지
@@ -29,6 +30,13 @@ packages/
 - Next.js(pages router) 기반
 - 주요 기능: 영화 목록, 상세 정보, 검색, 인물 정보 제공
 - 현재 반응형 View는 지원하지 않습니다.
+
+### apps/insights
+
+- 영화 분석 대시보드 애플리케이션
+- Vite + React 19 (React Compiler 활성화) 기반
+- 주요 기능: 대시보드, 영화별 Revenue 테이블, 장르별 Revenue 통계 차트
+- 100% 바이브코딩(Claude AI)으로 개발됨
 
 ### packages/browserslist-config
 
